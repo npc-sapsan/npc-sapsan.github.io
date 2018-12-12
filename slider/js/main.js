@@ -25,5 +25,3 @@ function fillname() {
 }
 const cards = document.querySelectorAll(".card");
 cards.forEach(card=>card.addEventListener('click', fillname));
-
-antsiforov4
