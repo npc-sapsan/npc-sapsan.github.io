@@ -118,6 +118,7 @@ textarea {
 }
 
 .info-cont {
+    margin-top: 20px;
     height: 40px;
     background-color: #8c8c8c;
     color: whitesmoke;
@@ -129,6 +130,18 @@ textarea {
 }
 .info {
     margin-top: 5px;
+}
+
+.carousel-big {
+    //border: 10px solid white;
+    display: inline-block;
+    position: absolute;
+    transform-origin: 0px 0px 0px;
+    z-index: 94;
+    transform: scale(2);
+    width: 300px;
+    height: 320px;
+    transition: width .3s cubic-bezier(0.1, 0.8, 0.5, 2), height .3s cubic-bezier(0.1, 0.8, 0.5, 2);
 }
 
 #footer .container {
