@@ -11,6 +11,7 @@ $(function(){
             crs.fadeIn(1500)
         },
         speed:2,
+        frontItemClass: 'carousel-big',
         mirror: {
             gap: 12,     /* 12 pixel gap between item and reflection */
             height: 0.2, /* 20% of item height */
