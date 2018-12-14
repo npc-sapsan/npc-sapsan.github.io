@@ -93,6 +93,11 @@ textarea {
     opacity: .88;
 }
 
+.logo {
+    width: 254px;
+    height: 46px;
+}
+
 #carousel {
     height: 300px;
     overflow: visible !important;
@@ -192,13 +197,13 @@ textarea {
     height: auto;
     padding: 50px 0;
 }
-#footer a {color: white}
 
+#footer a {color: white}
 
 /* Media */
 /* Small Devices, Tablets */
 @media only screen and (max-width : 1280px){
-    #main {height:458px;}
+    html, body, #main {height: auto;}
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width : 988px){
