@@ -1,4 +1,3 @@
-
 html {
     color: #222;
     font-size: 1em;
@@ -79,6 +78,7 @@ textarea {
 #header, #footer {
     background: black;
     opacity: .88;
+    height: 60px;
 }
 
 #main {
@@ -94,19 +94,22 @@ textarea {
 }
 
 #carousel {
-    height: 400px;
+    height: 300px;
     overflow: visible !important;
 }
 
 .card {
-    width: 260px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
     padding: 12px;
     text-align: center;
     background-color: rgba(18, 16, 16, .35);
     border: 2px white solid;
     border-radius: 12px;
     cursor: pointer;
+}
+.card img {
+    width: 140px;
 }
 
 .card p {
@@ -139,10 +142,51 @@ textarea {
     transform-origin: 0px 0px 0px;
     z-index: 94;
     transform: scale(2);
-    width: 300px;
-    height: 320px;
-    transition: width .3s cubic-bezier(0.1, 0.8, 0.5, 2), height .3s cubic-bezier(0.1, 0.8, 0.5, 2);
+    width: 200px;
+    height: 200px;
+    transition: width .4s cubic-bezier(0.1, 0.8, 0.5, 2), height .4s cubic-bezier(0.1, 0.8, 0.5, 2);
 }
+
+.btn-group button {
+    margin: 0px 5px;
+}
+
+.menu {
+    width: 100%;
+    height: auto;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    max-width: 792px;
+    max-height: 100%;
+}
+
+@media screen and (min-width: 512px) {
+
+    .menu {
+        max-width: 65vw;
+        max-height: 65vh;
+    }
+}
+
+.main-menu { cursor: pointer; }
+
+.main-menu circle { transition: opacity 250ms; }
+
+.main-menu circle:hover { opacity: 1; }
+
+.main-menu.is-active > circle { opacity: 1; }
+[class$="-button"] {
+    cursor: pointer;
+}
+
+[class$="-button"] circle {
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+[class$="-button"] circle:hover { opacity: 0.6; }
+
+[class$="-button"] path { pointer-events: none; }
 
 #footer .container {
     height: auto;
