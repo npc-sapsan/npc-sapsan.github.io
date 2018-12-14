@@ -147,6 +147,9 @@ textarea {
     transition: width .4s cubic-bezier(0.1, 0.8, 0.5, 2), height .4s cubic-bezier(0.1, 0.8, 0.5, 2);
 }
 
+.mdc-button {
+    background-color: #777 !important;
+}
 .btn-group button {
     margin: 0px 5px;
 }
