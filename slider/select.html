@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Слайдер</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/css/swiper.min.css">
+    <style>
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 0.8em 0;
+            padding: 0;
+        }
+
+        .cards-set {
+            font-size: 0;
+        }
+        .card {
+            display: inline-block;
+            margin: 8px;
+            width: 380px;
+            min-height: 280px;
+            font-size: 16px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .card .heading {
+            height: 160px;
+            line-height: 160px;
+            color: black;
+            font-size: larger;
+            text-transform: uppercase;
+        }
+        .swiper-container {
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<body>
+<section id="header">
+    <div class="container container-fluid">
+        <div class="header-logo"></div>
+        <h2>Карточка предприятия</h2>
+    </div>
+</section>
+<section id="main">
+    <div class="container">
+        <div class="row">
+
+            <div class="cards-set swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="heading">
+                            Общие сведения
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="heading">
+                            <h4>Организация</h4>
+                            <h4>Штат</h4>
+                            <h4>Сотрудники</h4>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="heading">
+                            Сведения о собственности
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/js/swiper.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //initialize swiper when document ready
+        var mySwiper = new Swiper ('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            direction: 'horizontal',
+            loop: true
+        })
+    });
+</script>
+</body>
+</html>
