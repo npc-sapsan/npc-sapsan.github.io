@@ -94,7 +94,7 @@ $(function(){
     // buttons
     document.querySelector('#print').addEventListener('click', function () {
         print();
-    })
+    });
 
     function fillname() {
         const info = document.querySelector('#info');
@@ -118,10 +118,10 @@ $(function(){
             const regex = new RegExp(this.value, 'gi');
             const orgName = org.name.replace(regex, `${this.value}`);
             return `
-      <li>
-        <span class="name" data-id="${org.id}">${orgName}</span>
-      </li>  
-    `;
+                    <li>
+                        <span class="name" data-id="${org.id}">${orgName}</span>
+                    </li>  
+                    `;
         }).join('');
         suggestions.innerHTML = html;
         suggLi = document.querySelectorAll('.suggestions li');
