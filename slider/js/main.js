@@ -49,7 +49,7 @@ $(function(){
         </div>
         `;
         crs.append(el);
-    })
+    });
 
     crs.Cloud9Carousel({
         buttonLeft: $(".slider-control-left"),
@@ -74,4 +74,30 @@ $(function(){
     const cards = document.querySelectorAll(".card");
     cards.forEach(card=>card.addEventListener('click', fillname));
     document.querySelector('#info').textContent = data[0].name;
+
+    function findMatches(wordToMatch, data){
+        return data.filter(org=> {
+            const regex = new RegExp(wordToMatch, 'gi');
+            return org.name.match(regex);
+        });
+    };
+
+    function displayMatches(){
+        const matchArray = findMatches(this.value, data);
+        const html = matchArray.map(org=>{
+            const regex = new RegExp(this.value, 'gi');
+            const orgName = org.name.replace(regex, `<span class='hl'>${this.value}</span>`);
+            return `
+      <li>
+        <span class="name">${orgName}</span>
+      </li>  
+    `;
+        }).join('');
+        suggestions.innerHTML = html;
+    };
+
+    const searchInput = document.querySelector('#search');
+    const suggestions = document.querySelector('.suggestions');
+    searchInput.addEventListener('keyup', displayMatches);
+
 });
