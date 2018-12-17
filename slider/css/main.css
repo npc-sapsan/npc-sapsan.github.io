@@ -92,7 +92,13 @@ textarea {
     height: 100%;
     opacity: .88;
 }
-
+.breadcrumb {
+    background: black;
+    opacity: .88;
+}
+.breadcrumb a {
+    color: whitesmoke;
+}
 .logo {
     width: 254px;
     height: 46px;
