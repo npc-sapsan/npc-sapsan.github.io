@@ -86,6 +86,10 @@ $(function(){
             let idx = crs.data("carousel").nearestIndex();
             let el = getDataElement(idx);
             document.querySelector('#info').textContent = el.name;
+            let selectedItem = document.querySelector('.carousel-big');
+            selectedItem.addEventListener('click', function(){
+                window.location.assign('select.html');
+            })
         },
         speed:1,
         frontItemClass: 'carousel-big'
