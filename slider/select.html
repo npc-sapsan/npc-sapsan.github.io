@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/css/swiper.min.css">
     <style>
+        body, #main {
+            height: 460px;
+        }
         h1 {
             margin: 0;
             padding: 0;
@@ -28,7 +31,7 @@
             display: inline-block;
             margin: 8px;
             width: 380px;
-            min-height: 280px;
+            min-height: 260px;
             font-size: 16px;
             background-color: #ffffff;
             border-radius: 2px;
@@ -42,16 +45,19 @@
         .card .heading {
             height: 160px;
             line-height: 160px;
-            color: black;
-            font-size: larger;
-            text-transform: uppercase;
+            //text-transform: uppercase;
             background: gray;
             opacity:.8;
-            color: whitesmoke;
+            color: white;
+            padding-top: 10px;
         }
         .swiper-container {
             width: auto;
             height: auto;
+        }
+        .swiper-slide background-image {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
         }
     </style>
     <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -72,26 +78,38 @@
             <div class="cards-set swiper-container swiper-container-horizontal">
                 <div class="swiper-wrapper">
 
-                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/1)">
-                        <div class="heading"><h2>Общие сведения</h2></div>
-                    </div>
-                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/2)">
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/260/business/1)">
                         <div class="heading">
-                            <h2>Организация</h2>
-                            <h2>Штат</h2>
-                            <h2>Сотрудники</h2>
+                            <h4>Организационно-штатная структура</h4>
                         </div>
                     </div>
-                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/3)">
-                        <div class="heading"><h2>Сведения о собственности</h2></div>
-                    </div>
-                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/4)">
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/260/business/2)">
                         <div class="heading">
-                            <h2>Решения</h2>
-                            <h2>Приказы</h2>
+                            <h4>Сведения о собственности</h4>
                         </div>
                     </div>
-
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/260/business/3)">
+                        <div class="heading">
+                            <h4>Активы</h4>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/260/business/8)">
+                        <div class="heading">
+                            <h4>Учредительные документы</h4>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/260/business/5)">
+                        <div class="heading">
+                            <h4>Решения</h4>
+                            <h4>Приказы</h4>
+                            <h4>Распоряжения</h4>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/260/business/6)">
+                        <div class="heading">
+                            <h4>Общие сведения</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,11 +131,11 @@
 <script>
     $(document).ready(function () {
         //initialize swiper when document ready
-        var mySwiper = new Swiper ('.swiper-container', {
+        const mySwiper = new Swiper ('.swiper-container', {
             effect: 'coverflow',
             grabCursor: true,
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 10,
             direction: 'horizontal',
             loop: true,
             coverflowEffect: {
@@ -127,8 +145,11 @@
                 modifier: 1,
                 slideShadows : true,
             }
-        })
+        });
     });
+
+    const slides = document.querySelectorAll('.card');
+    slides.forEach(card=>card.addEventListener('click', function(){window.location.assign('data.html');}));
 </script>
 </body>
 </html>
