@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Данные</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Концерн «Радиоэлектронные технологии»</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script type="text/javascript" src="js/Chart.min.js"></script>
     <style>
         body, #main {
-            height: 460px;
+            height: 335px;
+        }
+        #main {margin-top:0px}
+        .node circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3px;
+        }
+
+        .node text { font: 12px sans-serif; }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+        svg {
+            position: absolute;
+            top: 100px;
         }
     </style>
     <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
 <body>
 <section id="header">
@@ -30,6 +48,112 @@
 <section id="main">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <canvas id="myChart" height="200px"></canvas>
+            </div>
+            <div class="col-md-6">
+
+                <script>
+
+                    var treeData = [
+                        {
+                            "name": "директор",
+                            "parent": "null",
+                            "children": [
+                                {
+                                    "name": "отдел разработки",
+                                    "parent": "директор",
+                                    "children": [
+                                        {
+                                            "name": "отдел A",
+                                            "parent": "отдел разработки"
+                                        },
+                                        {
+                                            "name": "отдел B",
+                                            "parent": "отдел разработки"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "отдел",
+                                    "parent": "директор"
+                                },
+                                {
+                                    "name": "отдел",
+                                    "parent": "директор"
+                                }
+                            ]
+                        }
+                    ];
+
+                    // ************** Generate the tree diagram	 *****************
+                    var margin = {top: 40, right: 0, bottom: 0, left: 0},
+                        width = 400 - margin.right - margin.left,
+                        height = 300 - margin.top - margin.bottom;
+
+                    var i = 0;
+
+                    var tree = d3.layout.tree()
+                        .size([height, width]);
+
+                    var diagonal = d3.svg.diagonal()
+                        .projection(function(d) { return [d.x, d.y]; });
+
+                    var svg = d3.select("body").append("svg")
+                        .attr("width", width + margin.right + margin.left)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                    root = treeData[0];
+
+                    update(root);
+
+                    function update(source) {
+
+                        // Compute the new tree layout.
+                        var nodes = tree.nodes(root).reverse(),
+                            links = tree.links(nodes);
+
+                        // Normalize for fixed-depth.
+                        nodes.forEach(function(d) { d.y = d.depth * 100; });
+
+                        // Declare the nodes…
+                        var node = svg.selectAll("g.node")
+                            .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+                        // Enter the nodes.
+                        var nodeEnter = node.enter().append("g")
+                            .attr("class", "node")
+                            .attr("transform", function(d) {
+                                return "translate(" + d.x + "," + d.y + ")"; });
+
+                        nodeEnter.append("circle")
+                            .attr("r", 10)
+                            .style("fill", "#fff");
+
+                        nodeEnter.append("text")
+                            .attr("y", function(d) {
+                                return d.children || d._children ? -18 : 18; })
+                            .attr("dy", ".35em")
+                            .attr("text-anchor", "middle")
+                            .text(function(d) { return d.name; })
+                            .style("fill-opacity", 1);
+
+                        // Declare the links…
+                        var link = svg.selectAll("path.link")
+                            .data(links, function(d) { return d.target.id; });
+
+                        // Enter the links.
+                        link.enter().insert("path", "g")
+                            .attr("class", "link")
+                            .attr("d", diagonal);
+
+                    }
+
+                </script>
+
+            </div>
         </div>
     </div>
 </section>
@@ -42,8 +166,39 @@
         </div>
     </div>
 </section>
-<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["2013", "2014", "2015", "2016", "2017", "2018"],
+            datasets: [{
+                data: [12145, 10007, 12500, 17111, 16999, 18320],
+                backgroundColor: [
+                    '#BF3F3F',
+                    '#7A1414',
+                    '#8216ED',
+                    '#330461',
+                    '#336104',
+                    '#264506'
+                ],
+                borderColor: [
+                    '#fff',
+                    '#fff',
+                    '#fff',
+                    '#fff',
+                    '#fff',
+                    '#fff'
+                ],
+                borderWidth: 4
+            }]
+        },
+        options: {
+
+        }
+    });
+</script>
 </body>
 </html>
