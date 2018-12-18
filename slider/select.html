@@ -45,6 +45,9 @@
             color: black;
             font-size: larger;
             text-transform: uppercase;
+            background: gray;
+            opacity:.8;
+            color: whitesmoke;
         }
         .swiper-container {
             width: auto;
@@ -68,21 +71,24 @@
 
             <div class="cards-set swiper-container swiper-container-horizontal">
                 <div class="swiper-wrapper">
-                    <div class="card swiper-slide">
+
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/1)">
+                        <div class="heading"><h2>Общие сведения</h2></div>
+                    </div>
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/2)">
                         <div class="heading">
-                            Общие сведения
+                            <h2>Организация</h2>
+                            <h2>Штат</h2>
+                            <h2>Сотрудники</h2>
                         </div>
                     </div>
-                    <div class="card swiper-slide">
-                        <div class="heading">
-                            <h4>Организация</h4>
-                            <h4>Штат</h4>
-                            <h4>Сотрудники</h4>
-                        </div>
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/3)">
+                        <div class="heading"><h2>Сведения о собственности</h2></div>
                     </div>
-                    <div class="card swiper-slide">
+                    <div class="card swiper-slide" style="background-image:url(http://lorempixel.com/380/280/business/4)">
                         <div class="heading">
-                            Сведения о собственности
+                            <h2>Решения</h2>
+                            <h2>Приказы</h2>
                         </div>
                     </div>
 
@@ -108,10 +114,19 @@
     $(document).ready(function () {
         //initialize swiper when document ready
         var mySwiper = new Swiper ('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
             slidesPerView: 3,
             spaceBetween: 30,
             direction: 'horizontal',
-            loop: true
+            loop: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows : true,
+            }
         })
     });
 </script>
