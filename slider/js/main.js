@@ -104,13 +104,6 @@ $(function(){
         print();
     });
 
-    document.querySelector("#D3").addEventListener('click', function(){
-        document.querySelector('#info').textContent = '';
-        crs.toggle();
-        //$("#svg_menu").toggle();
-        kret_diag.toggle();
-    });
-
     let on = true;
     document.querySelector("#xproc_btn").addEventListener('click', function () {
         document.querySelector('#info').textContent = '';
@@ -128,6 +121,17 @@ $(function(){
 
         //kret_diag.hide();
         crs.hide();
+    });
+
+    document.querySelector("#D3").addEventListener('click', function(){
+        document.querySelector('#info').textContent = '';
+        crs.toggle();
+        //$("#svg_menu").toggle();
+        if(on) {
+            kret_diag.toggle();
+        } else {
+            xproc.hide();
+        }
     });
 
 
