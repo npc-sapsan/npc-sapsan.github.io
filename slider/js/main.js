@@ -86,13 +86,14 @@ $(function(){
             crs.css('display', 'none');
             crs.fadeIn(1500);
         },
-        onAnimationFinished: function(){
+        onRendered: function(){
             let idx = crs.data("carousel").nearestIndex();
             let el = getDataElement(idx);
             document.querySelector('#info').textContent = el.name;
             let selectedItem = document.querySelector('.carousel-big');
             selectedItem.addEventListener('click', function(){
-                window.location.assign('select.html');
+                if(selectedItem.getAttribute('id')== 0)
+                    window.location.assign('select.html');
             })
         },
         speed:1,
