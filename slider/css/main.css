@@ -5,7 +5,10 @@ html {
     line-height: 1.4;
 }
 
-body {height:100%}
+body {
+    height:100%;
+    background: ghostwhite;
+}
 
 ::selection {
     background: #b3d4fc;
@@ -87,17 +90,23 @@ textarea {
     margin: 50px 0;
 }
 #main .container {
-    background: ghostwhite;
     box-sizing: border-box;
     height: 100%;
     opacity: .88;
 }
 .breadcrumb {
+    width: 400px;
     background: black;
     opacity: .88;
 }
 .breadcrumb a {
     color: whitesmoke;
+}
+#user-info {
+    text-align: right;
+    color: white;
+    margin-top:-47px;
+    margin-right:50px;
 }
 .logo {
     width: 254px;
@@ -131,20 +140,12 @@ textarea {
     text-decoration: none;
 }
 
-.info-cont {
-    margin-top: 20px;
-    height: 40px;
-    background-color: #8c8c8c;
-    color: whitesmoke;
-    opacity: .7;
-    vertical-align: middle;
-    text-align: center;
-    border: 2px white solid;
-    border-radius: 12px;
-}
 .info {
-    margin-top: 5px;
+    margin-top: 20px;
+    font-weight: bolder;
+    color: whitesmoke;
 }
+
 
 .carousel-big {
     //border: 10px solid white;
