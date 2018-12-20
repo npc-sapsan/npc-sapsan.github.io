@@ -1,6 +1,10 @@
 $(function(){
 
     const crs = $("#carousel");
+    const kret_diag = $("#kret_diag");
+    const xproc = $("#xproc");
+    xproc.hide();
+    kret_diag.hide();
 
     const data = [
         {
@@ -99,6 +103,33 @@ $(function(){
     document.querySelector('#print').addEventListener('click', function () {
         print();
     });
+
+    document.querySelector("#D3").addEventListener('click', function(){
+        document.querySelector('#info').textContent = '';
+        crs.toggle();
+        //$("#svg_menu").toggle();
+        kret_diag.toggle();
+    });
+
+    let on = true;
+    document.querySelector("#xproc_btn").addEventListener('click', function () {
+        document.querySelector('#info').textContent = '';
+        if(on) {
+            this.textContent = 'x%';
+            kret_diag.hide();
+            xproc.show();
+            on = false;
+        } else {
+            this.textContent = '100%';
+            kret_diag.show();
+            xproc.hide();
+            on = true;
+        }
+
+        //kret_diag.hide();
+        crs.hide();
+    });
+
 
     function fillname() {
         const info = document.querySelector('#info');
