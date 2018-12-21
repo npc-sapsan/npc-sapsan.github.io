@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Концерн «Радиоэлектронные технологии»</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <style>
         body, #main {
             height: 488px;
@@ -23,6 +26,9 @@
             display: block;
             line-height: 1.428571429;
             color: #999;
+        }
+        .buttom_btns {
+            margin-top: 254px;
         }
     </style>
 </head>
@@ -42,7 +48,7 @@
 <section id="main">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-10 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="673px" height="309px" viewBox="-0.5 -0.5 673 309">
                     <defs/>
                     <rect x="245" y="20.5" width="200" height="60" rx="9" ry="9" fill="#000000" stroke="none" transform="translate(2,3)" opacity="0.25"/>
@@ -97,6 +103,12 @@
                     </g>
                 </svg>
             </div>
+            <div class="col-md-2 text-center buttom_btns">
+                <p>
+                    <button class="foo-button mdc-icon-button material-icons print">printer</button>
+                    <button class="foo-button mdc-icon-button material-icons" data-toggle="modal" data-target="#emailModal">email</button>
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -148,7 +160,10 @@
                         </div>
                     </div>
                 </div>
-
+            <div>
+                <button class="foo-button mdc-icon-button material-icons print">printer</button>
+                <button class="foo-button mdc-icon-button material-icons" data-toggle="modal" data-target="#emailModal">email</button>
+            </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
@@ -157,5 +172,44 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div id="emailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Отправка сообщения</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputText" class="col-sm-2 control-label">Сообщение</label>
+                        <div class="col-sm-10">
+                            <textarea id="inputText" class="form-control" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Отправить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    const print_btns = document.querySelectorAll('.print');
+    print_btns.forEach(btn=>{
+        btn.addEventListener('click',function(){
+            print();
+        });
+    });
+</script>
 </body>
 </html>
