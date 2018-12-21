@@ -135,6 +135,9 @@ $(function(){
         }
     });
 
+    $('#sapsan_diag').click(function(){
+        window.location.assign('select.html');
+    });
 
     function fillname() {
         const info = document.querySelector('#info');
