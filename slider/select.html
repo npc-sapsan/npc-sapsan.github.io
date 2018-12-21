@@ -99,6 +99,9 @@
                 opacity: 1;
             }
         }
+        .buttom_btns {
+            margin-top: 164px;
+        }
     </style>
     <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 </head>
@@ -116,7 +119,7 @@
 </section>
 <section id="main">
     <div class="row cards-row">
-        <div class="col-md-12">
+        <div class="col-md-10">
 
             <div class="card">
                 <div class="card-title">
@@ -152,9 +155,11 @@
             </div>
 
         </div>
+        <div class="col-md-2 text-center">
+        </div>
     </div>
     <div class="row cards-row">
-        <div class="col-md-12">
+        <div class="col-md-10">
 
             <div class="card">
                 <div class="card-title">
@@ -191,6 +196,12 @@
                 </div>
             </div>
 
+        </div>
+        <div class="col-md-2 text-center buttom_btns">
+            <p>
+                <button class="foo-button mdc-icon-button material-icons" id="print">printer</button>
+                <button class="foo-button mdc-icon-button material-icons" data-toggle="modal" data-target="#emailModal">email</button>
+            </p>
         </div>
     </div>
 </section>
@@ -232,8 +243,43 @@
         },500);
     }
 
-    const btns = document.querySelectorAll('button');
+    const btns = document.querySelectorAll('.card-action-readMore');
     btns.forEach(btn=>btn.addEventListener('click', function(){window.location.assign('data.html');}));
+
+    document.querySelector('#print').addEventListener('click', function () {
+        print();
+    });
 </script>
+
+<div id="emailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Отправка сообщения</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputText" class="col-sm-2 control-label">Сообщение</label>
+                        <div class="col-sm-10">
+                            <textarea id="inputText" class="form-control" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Отправить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </body>
 </html>
