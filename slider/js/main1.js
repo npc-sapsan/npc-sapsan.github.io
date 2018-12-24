@@ -81,7 +81,7 @@ $(function(){
         pagination: {
             el: '.swiper-pagination-h',
             zoom: true,
-            clickable: true,
+            clickable: true
         },
     });
 
