@@ -75,10 +75,8 @@ $(function(){
     });
 
     var swiperH = new Swiper('.swiper-container-h', {
-        roundLengths: true,
-        nextButton: ".slider-control-right",
         loop: true,
-        spaceBetween: 20,
+        spaceBetween: 10,
         slidesPerView:3,
         pagination: {
             el: '.swiper-pagination-h',
@@ -92,13 +90,6 @@ $(function(){
         loop:true,
         spaceBetween: 20,
         slidesPerView: 2,
-        effect: 'cube',
-        cube: {
-            slideShadows: true,
-            shadow: true,
-            shadowOffset: 20,
-            shadowScale: 0.94
-        },
         pagination: {
             el: '.swiper-pagination-h',
             clickable: true,
