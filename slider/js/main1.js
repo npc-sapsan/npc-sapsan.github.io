@@ -78,11 +78,17 @@ $(function(){
         loop: true,
         spaceBetween: 10,
         slidesPerView:3,
-        pagination: {
-            el: '.swiper-pagination-h',
-            zoom: true,
-            clickable: true
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
         },
+        mousewheel: {
+            invert: true,
+        },
+        navigation: {
+            nextEl: '.slider-control-right',
+            prevEl: '.slider-control-left',
+        }
     });
 
     var swiperHH = new Swiper('.swiper-container-hh', {
