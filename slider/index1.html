@@ -39,6 +39,7 @@
             display: inline-block;
             width: 20%;
             min-width: 300px;
+            min-height: 280px;
             box-sizing: border-box;
             box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.7);
             border-radius: 3px;
@@ -87,6 +88,14 @@
             box-shadow: 7px 7px 15px 2px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.3s ease-in;
         }
+        .small-card {
+            padding: 10px;
+            border:1px solid gray;
+        }
+        .card > div > h2 {
+            text-shadow: 4px 3px 2px #ccc;
+            font-weight: 600;
+        }
     </style>
     <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 </head>
@@ -106,34 +115,38 @@
                 <img src="img/logo_cap.png" class="logo" alt="КРЭТ">
             </div>
         </div>
-        <div class="row">
+        <div class="row cards-row">
             <div class="col-md-10" style="margin-top: 30px">
 
                 <div class="swiper-container swiper-container-h">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide card">
-                            <div class="card-desc">
+                            <div>
                                 <h2>БРЭО</h2>
                             </div>
+                            <div class="card-desc"></div>
                         </div>
 
                         <div class="swiper-slide card">
+                            <div>
+                                <h2>РЭБ</h2>
+                            </div>
                             <div class="swiper-container swiper-container-hh">
-                                <div>
-                                    <h2>РЭБ</h2>
-                                </div>
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide small-card">
                                         <img class="card-image" src="img/npc-sapsan_sm.jpg"/>
                                     </div>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide small-card">
                                         <img src="img/aviapribor_sm.jpg"/>
                                     </div>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide small-card">
                                         <img src="img/bryansk_sm.jpg"/>
                                     </div>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide small-card">
                                         <img src="img/bskb_sm.jpg"/>
+                                    </div>
+                                    <div class="swiper-slide small-card">
+                                        <img src="img/avtomatika_sm.jpg"/>
                                     </div>
                                 </div>
                                 <div class="swiper-pagination swiper-pagination-h"></div>
@@ -141,19 +154,22 @@
                         </div>
 
                         <div class="swiper-slide card">
-                            <div class="card-desc">
+                            <div>
                                 <h2>ГО</h2>
                             </div>
+                            <div class="card-desc"></div>
                         </div>
                         <div class="swiper-slide card">
-                            <div class="card-desc">
+                            <div>
                                 <h2>ИА</h2>
                             </div>
+                            <div class="card-desc"></div>
                         </div>
                         <div class="swiper-slide card">
-                            <div class="card-desc">
+                            <div>
                                 <h2>Иное</h2>
                             </div>
+                            <div class="card-desc"></div>
                         </div>
                     </div>
                 </div>
@@ -225,11 +241,11 @@
                     <button class="foo-button mdc-icon-button material-icons" data-toggle="modal" data-target="#emailModal">email</button>
                 </p>
                 <p>
-                    <button class="foo-button hero-button mdc-button mdc-button--raised mdc-ripple-upgraded" id="xproc_btn">100%</button>
-                    <button class="foo-button hero-button mdc-button mdc-button--raised mdc-ripple-upgraded" id="D3">3D/2D</button>
+                    <button class="foo-button hero-button mdc-button mdc-button--raised mdc-ripple-upgraded" id="xproc_btn" disabled>100%</button>
+                    <button class="foo-button hero-button mdc-button mdc-button--raised mdc-ripple-upgraded" id="D3" disabled>3D/2D</button>
                 </p>
                 <div class="btn-group search-div">
-                    <input type="text" id="search" class="form-control" />
+                    <input type="text" id="search" class="form-control" disabled />
                     <ul class="suggestions">
                         <li>Введите название</li>
                     </ul>
