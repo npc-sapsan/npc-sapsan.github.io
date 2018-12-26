@@ -79,15 +79,7 @@ $(function(){
         },
         onRendered: function(){
             $('.descr').hide();
-            let idx = crs.data("carousel").nearestIndex();
-            let el = getDataElement(idx);
-            document.querySelector('#info').textContent = el.name;
-            let selectedItem = document.querySelector('.carousel-big');
             $('.carousel-big .descr').toggle();
-            selectedItem.addEventListener('click', function(){
-                if(selectedItem.getAttribute('id')== 0)
-                    window.location.assign('select.html');
-            })
         },
         speed:1,
         frontItemClass: 'carousel-big'
@@ -132,44 +124,6 @@ $(function(){
         window.location.assign('select.html');
     });
 
-    function fillname() {
-        const info = document.querySelector('#info');
-        info.textContent = this.dataset.name;
-    }
-    const cards = document.querySelectorAll(".card");
-    cards.forEach(card=>card.addEventListener('click', fillname));
-    document.querySelector('#info').textContent = data[0].name;
-
-    function findMatches(wordToMatch, data){
-        return data.filter(org=> {
-            const regex = new RegExp(wordToMatch, 'gi');
-            return org.name.match(regex);
-        });
-    };
-
-    let suggLi = document.querySelectorAll('.suggestions li');
-    function displayMatches(){
-        const matchArray = findMatches(this.value, data);
-        const html = matchArray.map(org=>{
-            const regex = new RegExp(this.value, 'gi');
-            const orgName = org.name.replace(regex, `${this.value}`);
-            return `
-                    <li>
-                        <span class="name" data-id="${org.id}">${orgName}</span>
-                    </li>  
-                    `;
-        }).join('');
-        suggestions.innerHTML = html;
-        suggLi = document.querySelectorAll('.suggestions li');
-        suggLi.forEach(li=>li.addEventListener('click',function(){
-            let selectedId = li.firstChild.nextSibling.dataset.id;
-            crs.data('carousel').goTo(selectedId);
-        }));
-    };
-
-    const searchInput = document.querySelector('#search');
-    const suggestions = document.querySelector('.suggestions');
-    searchInput.addEventListener('keyup', displayMatches);
     $('#sapsan_ava').click(function(){
         window.location.assign('select.html');
     });
