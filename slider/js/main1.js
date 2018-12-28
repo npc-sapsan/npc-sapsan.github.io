@@ -137,7 +137,7 @@ $(function(){
         }
     });
 
-    $('#sapsan_diag').click(function(){
+    $('.sapsan-select').click(function(){
         window.location.assign('select.html');
     });
 
@@ -179,4 +179,7 @@ $(function(){
     const searchInput = document.querySelector('#search');
     const suggestions = document.querySelector('.suggestions');
     searchInput.addEventListener('keyup', displayMatches);
+    document.querySelector('.home').addEventListener('click',function(){
+       window.location.assign('index.html');
+    });
 });

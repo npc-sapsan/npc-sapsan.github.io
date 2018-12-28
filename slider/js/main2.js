@@ -120,6 +120,10 @@ $(function(){
         }
     });
 
+    document.querySelector('.swapper').addEventListener('click',function(){
+       window.location.assign('index1.html');
+    });
+
     $('#sapsan_diag').click(function(){
         window.location.assign('select.html');
     });
