@@ -9,50 +9,71 @@ $(function(){
 
     const data = [
         {
-            id: 0,
-            'name':"«НПЦ «Сапсан»",
-            'logo':"npc-sapsan_sm.jpg"
+            'name':'АО "КПКБ"',
+            'did':3,
+            'divis':"ГО",
+            'type':"НИИ"
         },
         {
-            id: 1,
-            'name':"АО «Автоматика»",
-            'logo':"avtomatika_sm.jpg"
+            'name':'АО "НПО ЭлТом"',
+            'did':5,
+            'divis':"Прочие",
+            'type':"Завод"
         },
         {
-            id: 2,
-            'name':"АО «Брянский электромеханический завод»",
-            'logo':"bryansk_sm.jpg"
+            'name':'АО "НПО Квант"',
+            'did':2,
+            'divis':"РЭБ",
+            'type':"Завод"
         },
         {
-            id: 3,
-            'name':"ПАО «Брянское специальное конструкторское бюро»",
-            'logo':"bskb_sm.jpg"
+            'name':'АО "ННПО имени М.В.Фрунзе"',
+            'did':4,
+            'divis':"ИА",
+            'type':"Завод"
         },
         {
-            id: 4,
-            'name':"АО «Всероссийский научно-исследовательский институт «Градиент»",
-            'logo':"gradient_sm.jpg"
+            'name':'"НПЦ "Сапсан"',
+            'did':5,
+            'divis':"Прочие",
+            'type':"НПЦ"
         },
         {
-            id: 5,
-            'name':"АО «Научно-производственное объединение «Квант»",
-            'logo':"kvant_sm.jpg"
+            'name':'АО "Фазотрон-ВМЗ"',
+            'did':1,
+            'divis':"БРЭО",
+            'type':"Завод"
         },
         {
-            id: 6,
-            'name':"АО «Научно-производственное объединение «Радиоэлектроника» имени В.И.Шимко»",
-            'logo':"shimko_sm.jpg"
+            'name':'АО "ВНИИ "Градиент"',
+            'did':2,
+            'divis':"РЭБ",
+            'type':"НИИ"
         },
         {
-            id: 7,
-            'name':"АО «Радий»",
-            'logo':"radii_sm.jpg"
+            'name':'АО "НИИРС и ИСЭ"',
+            'did':3,
+            'divis':"ГО",
+            'type':"НИИ"
         },
         {
-            id: 8,
-            'name':"АО «Научно-исследовательский институт авиационного оборудования»",
-            'logo':"aviapribor_sm.jpg"
-        }
+            'name':'АО "УППО"',
+            'did':1,
+            'divis':"БРЭО",
+            'type':"Завод"
+        },
+        {
+            'name':'АО "НИИП имени В.В. Тихомирова"',
+            'did':1,
+            'divis':"БРЭО",
+            'type':"НИИ"
+        },
+        {
+            'name':'АО "НПП "Измеритель"',
+            'did':1,
+            'divis':"БРЭО",
+            'type':"Завод"
+        }                                                                             
     ];
 
     function getDataElement(id){
@@ -131,4 +152,35 @@ $(function(){
     $('#sapsan_ava').click(function(){
         window.location.assign('select.html');
     });
+
+    function findMatches(wordToMatch, data){
+        return data.filter(org=> {
+            const regex = new RegExp(wordToMatch, 'gi');
+            return org.name.match(regex);
+        });
+    };
+
+    let suggLi = document.querySelectorAll('.suggestions li');
+    function displayMatches(){
+        const matchArray = findMatches(this.value, data);
+        const html = matchArray.map(org=>{
+            const regex = new RegExp(this.value, 'gi');
+            const orgName = org.name.replace(regex, `${this.value}`);
+            return `
+                    <li>
+                        <span class="name" data-id="${org.did}">${orgName}</span>
+                    </li>  
+                    `;
+        }).join('');
+        suggestions.innerHTML = html;
+        suggLi = document.querySelectorAll('.suggestions li');
+        suggLi.forEach(li=>li.addEventListener('click',function(){
+            let selectedId = li.firstChild.nextSibling.dataset.id-1;
+            crs.data('carousel').goTo(selectedId);
+        }));
+    };
+
+    const searchInput = document.querySelector('#search');
+    const suggestions = document.querySelector('.suggestions');
+    searchInput.addEventListener('keyup', displayMatches);
 });
