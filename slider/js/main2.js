@@ -162,16 +162,30 @@ $(function(){
 
     let suggLi = document.querySelectorAll('.suggestions li');
     function displayMatches(){
-        const matchArray = findMatches(this.value, data);
-        const html = matchArray.map(org=>{
-            const regex = new RegExp(this.value, 'gi');
-            const orgName = org.name.replace(regex, `${this.value}`);
-            return `
+        let html = '';
+        let matchArray = findMatches(this.value, data);
+        if(!isNaN(this.value)){
+            matchArray = findMatches('Сапсан',data);
+            html = matchArray.map(org => {
+                let regex = new RegExp(this.value, 'gi');
+                let orgName = org.name.replace(regex, `${this.value}`);
+                return `
                     <li>
                         <span class="name" data-id="${org.did}">${orgName}</span>
                     </li>  
                     `;
-        }).join('');
+            }).join('');
+        } else {
+            html = matchArray.map(org => {
+                let regex = new RegExp(this.value, 'gi');
+                let orgName = org.name.replace(regex, `${this.value}`);
+                return `
+                    <li>
+                        <span class="name" data-id="${org.did}">${orgName}</span>
+                    </li>  
+                    `;
+            }).join('');
+        }
         suggestions.innerHTML = html;
         suggLi = document.querySelectorAll('.suggestions li');
         suggLi.forEach(li=>li.addEventListener('click',function(){
