@@ -49,7 +49,6 @@
             border-bottom: 1px solid rgba(128, 128, 128, 0.3);
             height: 100px;
             overflow: hidden;
-            text-align: justify;
             margin-top:30px;
         }
         .card-desc h4 {
@@ -112,6 +111,26 @@
         .breadcrumb {
             padding:18px;
         }
+        .mdl-tooltip {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            z-index: 999;
+            background: lightgray !important;
+            border-radius: 2px;
+            color: #fff;
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 10px;
+            max-width: 500px !important;
+            position: fixed;
+            top: -500px;
+            left: -500px;
+            padding: 8px;
+        }
+
     </style>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -147,19 +166,19 @@
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc">
-                    <h4>Организационно-штатная структура</h4>
+                <div class="card-desc" id="card1">
+                    <h4>Органы управления и контроля</h4>
                 </div>
                 <div class="card-actions">
-                    <button type='button' class='card-action-readMore'>открыть</button>
+                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card1Modal">открыть</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc">
-                    <h4>Сведения о собственности</h4>
+                <div class="card-desc" id="card2">
+                    <h4>Структура капитала и фин. вложения</h4>
                 </div>
                 <div class="card-actions">
                     <button type='button' class='card-action-readMore' disabled>открыть</button>
@@ -169,8 +188,8 @@
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc">
-                    <h4>Активы</h4>
+                <div class="card-desc" id="card3">
+                    <h4>Структура и менеджмент</h4>
                 </div>
                 <div class="card-actions">
                     <button type='button' class='card-action-readMore' disabled>открыть</button>
@@ -187,8 +206,8 @@
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc">
-                    <h4>Учредительные документы</h4>
+                <div class="card-desc" id="card4">
+                    <h4>Внутренние документы</h4>
                 </div>
                 <div class="card-actions">
                     <button type='button' class='card-action-readMore' disabled>открыть</button>
@@ -198,10 +217,19 @@
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc">
-                    <h4>Решения</h4>
-                    <h4>Приказы</h4>
-                    <h4>Распоряжения</h4>
+                <div class="card-desc" id="card5">
+                    <h4>Имущественный комплекс</h4>
+                </div>
+                <div class="card-actions">
+                    <button type='button' class='card-action-readMore' disabled>открыть</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                </div>
+                <div class="card-desc" id="card6">
+                    <h4>Финансово-хозяйственная деятельность</h4>
                 </div>
                 <div class="card-actions">
                     <button type='button' class='card-action-readMore' disabled>открыть</button>
@@ -256,13 +284,182 @@
         },500);
     }
 
-    const btns = document.querySelectorAll('.card-action-readMore');
-    btns.forEach(btn=>btn.addEventListener('click', function(){window.location.assign('data.html');}));
-
     document.querySelector('#print').addEventListener('click', function () {
         print();
     });
 </script>
+
+<!-- cards modals -->
+<div id="card1Modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Органы управления и контроля</h4>
+            </div>
+            <div class="modal-body">
+                <ul class='mdl-list'>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Высший орган управления</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Коллегиальный орган управления</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Исполнительный орган</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Комитеты при СД</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Ревизионная комиссия/Ревизор</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Аудитор</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Отдел внутреннего аудита</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Протоколы ОСА/РЕА/РЕУ</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Протоколы СД</span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-button mdl-js-button">Протоколы Комитетов при СД</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- / ends cards modals -->
+
+<!-- tooltips -->
+<div class="mdl-tooltip" for="card1">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Высший орган управления</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Коллегиальный орган управления</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Исполнительный орган</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Комитеты при СД</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Ревизионная комиссия/Ревизор</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Аудитор</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Отдел внутреннего аудита</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Протоколы ОСА/РЕА/РЕУ</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Протоколы СД</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Протоколы Комитетов при СД</span>
+        </li>
+    </ul>
+</div>
+<div class="mdl-tooltip" for="card2">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Структура капитала</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Фин. вложения</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Данные о эмиссии</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Данные о реестродержателе</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Список аффилированных лиц</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Группа ФАС</span>
+        </li>
+    </ul>
+</div>
+<div class="mdl-tooltip" for="card3">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Организационная структура</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-secondary-content">Перечень работников, назначение на должность которых требует согласования советом директоров</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Адресная книга</span>
+        </li>
+    </ul>
+</div>
+<div class="mdl-tooltip" for="card4">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Учредительные документы</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Свидетельства ОГРН/ИНН</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">ЛНПА</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+Лицензии на осуществление определенных видов деятельности
+            </span>
+        </li>
+    </ul>
+</div>
+<div class="mdl-tooltip" for="card5">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Недвижимое имущество</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Движимое имущество</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Объекты интелектуальной собственности</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Фин. вложения</span>
+        </li>
+    </ul>
+</div>
+<div class="mdl-tooltip" for="card6">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Годовой отчет</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Бухгалтерская отчетность</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Аудиторское заключение</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Заключение Ревизионной комиссии</span>
+        </li>
+    </ul>
+</div>
+<!-- / end tooltips-->
 
 <div id="emailModal" class="modal fade">
     <div class="modal-dialog">
