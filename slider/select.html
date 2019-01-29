@@ -17,6 +17,23 @@
         #main {
             margin: 15px 0 83px 0;
         }
+        #company_info {
+            position: fixed;
+            float: right;
+            display: table;
+            right: 10px;
+        }
+        #company_info p {line-height: .8}
+        @media (max-width: 1778px) {
+            #company_info {
+                position: relative;
+                float: left;
+                margin-left: 30px;
+                height: 100px;
+                display: block;
+                overflow-y: hidden;
+            }
+        }
         .cards-row {
             margin: 0px auto;
         }
@@ -151,10 +168,19 @@
 <section id="main">
     <div class="row cards-row">
         <div class="col-md-10">
-<div>
+<div id="company_info">
     <p><strong>Полное наименование:</strong> АКЦИОНЕРНОЕ ОБЩЕСТВО "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР "САПСАН"</p>
-    <p><strong>Адрес:</strong> 115280 г.Москва улица Автозаводская дом 25 корпус 2</p>
+    <p><strong>Краткое наименование:</strong> АО НПЦ "САПСАН"</p>
+    <p><strong>ОГРН:</strong> 1067746240210</p>
+    <p><strong>ИНН:</strong> 7706607880</p>
+    <p><strong>КПП:</strong> 772501001</p>
+    <p><strong>Юридический адрес:</strong> 115280 г.Москва улица Автозаводская дом 25 корпус 2</p>
     <p><strong>Дата регистрации:</strong> 06.02.2006</p>
+    <p><strong>Фактическое местонахождение:</strong> г.Москва Электрический переулок 1с12</p>
+    <p><strong>Тип организации:</strong> Иное</p>
+    <p><strong>Дивизион:</strong> Иное</p>
+    <p><strong>Количество работников:</strong> </p>
+    <p><strong>Статус организации:</strong> Действующая</p>
 </div>
         </div>
         <div class="col-md-2 text-center">
@@ -255,39 +281,6 @@
         </div>
     </div>
 </section>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script src="js/vendor/modernizr-2.8.3.min.js"></script>
-<script>
-    var buttons = document.getElementsByTagName('button');
-
-    Array.prototype.forEach.call(buttons, function (b) {
-        b.addEventListener('click', createRipple);
-    });
-
-    function createRipple (e) {
-        // alert('x');
-        var circle = document.createElement('div');
-        this.appendChild(circle);
-
-        var d = Math.max(this.clientWidth, this.clientHeight);
-
-        circle.style.width = circle.style.height = d + 'px';
-
-        var rect = this.getBoundingClientRect();
-        circle.style.left = e.clientX - rect.left -d/2 + 'px';
-        circle.style.top = e.clientY - rect.top - d/2 + 'px';
-        circle.classList.add('ripple');
-
-        setTimeout(function(){
-            circle.remove();
-        },500);
-    }
-
-    document.querySelector('#print').addEventListener('click', function () {
-        print();
-    });
-</script>
 
 <!-- cards modals -->
 <div id="card1Modal" class="modal fade">
@@ -382,7 +375,7 @@
             <div class="modal-body">
                 <ul class='mdl-list'>
                     <li class="mdl-list__item">
-                        <span class="mdl-button mdl-js-button">Организационная структура</span>
+                        <span class="mdl-button mdl-js-button" id="oss">Организационная структура</span>
                     </li>
                     <li class="mdl-list__item">
                         <span class="mdl-list__item-primary-content">Перечень работников, назначение на должность которых требует согласования советом директоров</span>
@@ -3717,5 +3710,42 @@ mso-ansi-language:RU'><o:p>&nbsp;</o:p></span></p>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<script>
+    var buttons = document.getElementsByTagName('button');
+
+    Array.prototype.forEach.call(buttons, function (b) {
+        b.addEventListener('click', createRipple);
+    });
+
+    function createRipple (e) {
+        // alert('x');
+        var circle = document.createElement('div');
+        this.appendChild(circle);
+
+        var d = Math.max(this.clientWidth, this.clientHeight);
+
+        circle.style.width = circle.style.height = d + 'px';
+
+        var rect = this.getBoundingClientRect();
+        circle.style.left = e.clientX - rect.left -d/2 + 'px';
+        circle.style.top = e.clientY - rect.top - d/2 + 'px';
+        circle.classList.add('ripple');
+
+        setTimeout(function(){
+            circle.remove();
+        },500);
+    }
+
+    document.querySelector('#print').addEventListener('click', function () {
+        print();
+    });
+    document.querySelector('#oss').addEventListener('click', function(){
+        window.location.assign('data.html');
+    });
+</script>
 </body>
 </html>
