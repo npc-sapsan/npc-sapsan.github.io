@@ -10,66 +10,77 @@ $(function(){
     const data = [
         {
             'name':'АО "КПКБ"',
+            'id':1,
             'did':3,
             'divis':"ГО",
             'type':"НИИ"
         },
         {
             'name':'АО "НПО "ЭлТом"',
+            'id':2,
             'did':5,
             'divis':"Прочие",
             'type':"Завод"
         },
         {
             'name':'АО "НПО "Квант"',
+            'id':3,
             'did':2,
             'divis':"РЭБ",
             'type':"Завод"
         },
         {
             'name':'АО "ННПО имени М.В.Фрунзе"',
+            'id':4,
             'did':4,
             'divis':"ИА",
             'type':"Завод"
         },
         {
             'name':'"НПЦ "Сапсан"',
+            'id':5,
             'did':5,
             'divis':"Прочие",
             'type':"НПЦ"
         },
         {
             'name':'АО "Фазотрон-ВМЗ"',
+            'id':6,
             'did':1,
             'divis':"БРЭО",
             'type':"Завод"
         },
         {
             'name':'АО "ВНИИ "Градиент"',
+            'id':7,
             'did':2,
             'divis':"РЭБ",
             'type':"НИИ"
         },
         {
             'name':'АО "НИИРС и ИСЭ"',
+            'id':8,
             'did':3,
             'divis':"ГО",
             'type':"НИИ"
         },
         {
             'name':'АО "УППО"',
+            'id':9,
             'did':1,
             'divis':"БРЭО",
             'type':"Завод"
         },
         {
             'name':'АО "НИИП имени В.В. Тихомирова"',
+            'id':10,
             'did':1,
             'divis':"БРЭО",
             'type':"НИИ"
         },
         {
             'name':'АО "НПП "Измеритель"',
+            'id':11,
             'did':1,
             'divis':"БРЭО",
             'type':"Завод"
@@ -171,7 +182,7 @@ $(function(){
                 let orgName = org.name.replace(regex, `${this.value}`);
                 return `
                     <li>
-                        <span class="name" data-id="${org.did}">${orgName}</span>
+                        <span class="name" data-did="${org.did}" data-id="${org.id}">${orgName}</span>
                     </li>  
                     `;
             }).join('');
@@ -181,7 +192,7 @@ $(function(){
                 let orgName = org.name.replace(regex, `${this.value}`);
                 return `
                     <li>
-                        <span class="name" data-id="${org.did}">${orgName}</span>
+                        <span class="name" data-did="${org.did}" data-id="${org.id}">${orgName}</span>
                     </li>  
                     `;
             }).join('');
@@ -189,8 +200,12 @@ $(function(){
         suggestions.innerHTML = html;
         suggLi = document.querySelectorAll('.suggestions li');
         suggLi.forEach(li=>li.addEventListener('click',function(){
-            let selectedId = li.firstChild.nextSibling.dataset.id-1;
-            crs.data('carousel').goTo(selectedId);
+            if(li.firstChild.nextSibling.dataset.id == 5) {
+                window.location.assign('select.html');
+            } else {
+                let selectedId = li.firstChild.nextSibling.dataset.did-1;
+                crs.data('carousel').goTo(selectedId);
+            }
         }));
     };
 
