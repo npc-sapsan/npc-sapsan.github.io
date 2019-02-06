@@ -8,6 +8,7 @@ html {
 body {
     height:100%;
     background: ghostwhite;
+    overflow: hidden;
 }
 
 ::selection {
@@ -79,7 +80,7 @@ textarea {
 
 #header h2 {color: whitesmoke}
 #header, #footer {
-    background: black;
+    background: #000000 url(../img/background-dots.png) 0 5px repeat;
     opacity: .88;
     height: 60px;
 }
@@ -96,10 +97,13 @@ textarea {
 }
 .breadcrumb {
     font-size:16px;
-    width: 400px;
+    width: auto;
     background: black;
     opacity: .88;
-    padding:19px;
+    position: absolute;
+    top:16px;
+    left:160px;
+    padding: 0 !important;
 }
 .breadcrumb a {
     color: whitesmoke;
@@ -113,9 +117,19 @@ textarea {
     margin-top:-61px;
     margin-right:50px;
 }
+.header_logo {
+    float: left;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    z-index: 2;
+}
 .logo {
     width: 254px;
     height: 46px;
+}
+.logo_white {
+    width: 110px;
 }
 
 #carousel {
