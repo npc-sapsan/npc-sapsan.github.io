@@ -23,10 +23,12 @@
             display: table;
             right: 10px;
             top: 90px;
+            width:500px;
         }
         #company_info p {line-height: .8}
         @media (max-width: 1778px) {
             #company_info {
+                width:auto;
                 position: relative;
                 top: unset;
                 float: left;
@@ -36,6 +38,12 @@
                 display: block;
                 overflow-y: hidden;
             }
+            .card_m img {
+                width: 395px;
+            }
+        }
+        @media (max-width: 1536px) {
+            .card_m img {width: 380px}
         }
         .cards-row {
             margin: 0px auto;
@@ -45,65 +53,12 @@
             display: inline-block;
             width: 300px;
             min-width: 300px;
-            margin: 1em 1.5%;
-        }
-        .card_m img {
-            width:300px;
-        }
-
-        .ripple {
-            border-radius: 50%;
-            background: #6D6D6D;
-            position: absolute;
-            transform: scale(0);
-            opacity: 1;
-            animation: ripple 0.4s linear;
-        }
-
-        @keyframes ripple {
-            to {
-                transform: scale(2.5);
-                opacity: 0;
-            }
-        }
-        @keyframes scl {
-            0% {
-                opacity: 0;
-                transform: scaleX(0.9) translateX(-50px);
-            }
-            75% {
-                opacity: 0.2;
-            }
-            100% {
-                transform: scaleX(1) translateX(0);
-                opacity: 1;
-            }
+            margin: 1em 3.3%;
         }
         .buttom_btns {
-            margin-top: 160px;
+            margin-top: 210px;
         }
-        .breadcrumb {
-            padding:18px;
-        }
-        .mdl-tooltip {
-            -webkit-transform: scale(0);
-            transform: scale(0);
-            -webkit-transform-origin: top center;
-            transform-origin: top center;
-            z-index: 999;
-            background: lightgray !important;
-            border-radius: 2px;
-            color: #fff;
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 500;
-            line-height: 10px;
-            max-width: 500px !important;
-            position: fixed;
-            top: -500px;
-            left: -500px;
-            padding: 8px;
-        }
+
         .mdl-list__item {
             padding: 0px !important;
             min-height: 30px !important;
