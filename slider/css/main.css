@@ -1,3 +1,10 @@
+/*
+header #2e3e4e
+green #12aab5
+dark green #10739e
+orange #f2931e
+*/
+
 html {
     color: #222;
     font-size: 1em;
@@ -80,7 +87,7 @@ textarea {
 
 #header h2 {color: whitesmoke}
 #header, #footer {
-    background: #000000 url(../img/background-dots.png) 0 5px repeat;
+    background: #2e3e4e url(../img/background-dots.png) 0 5px repeat;
     opacity: .88;
     height: 60px;
 }
@@ -98,8 +105,8 @@ textarea {
 .breadcrumb {
     font-size:16px;
     width: auto;
-    background: black;
-    opacity: .88;
+    background: #2e3e4e;
+    opacity:.88;
     position: absolute;
     top:16px;
     left:160px;
@@ -142,8 +149,8 @@ textarea {
     height: 180px;
     padding: 12px;
     text-align: center;
-    background-color: rgba(18, 16, 16, .35);
-    border: 2px white solid;
+    background-color: rgba(46, 62, 78, .35);
+    border: 2px #fff solid;
     border-radius: 12px;
     cursor: pointer;
 }
@@ -155,7 +162,7 @@ textarea {
     margin-top: 5px;
 }
 .card a {
-    color: whitesmoke;
+    color: fff;
     text-decoration: none;
 }
 
@@ -179,7 +186,7 @@ textarea {
 }
 
 .mdc-button {
-    background-color: #777 !important;
+    background-color: #12aab5 !important;
 }
 
 input.search {
