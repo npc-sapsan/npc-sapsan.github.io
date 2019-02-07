@@ -1,3 +1,6 @@
+let images = document.querySelectorAll('img');
+lazyload(images);
+
 $(function(){
 
     const crs = $("#carousel");
