@@ -3,12 +3,36 @@ lazyload(images);
 
 $(function(){
 
+    setTimeout(function(){
+        $("#screen").hide();
+    },100);
+
     const crs = $("#carousel");
     const kret_diag = $("#kret_diag");
     const xproc = $("#xproc");
     $('.descr').hide();
     xproc.hide();
     kret_diag.hide();
+
+    crs.Cloud9Carousel({
+        buttonLeft: $(".slider-control-left"),
+        buttonRight: $(".slider-control-right"),
+        yOrigin: 42,
+        yRadius: 40,
+        itemClass: "card",
+        bringToFront: true,
+        onLoaded: function () {
+            crs.css('visibility', 'visible');
+            crs.css('display', 'none');
+            crs.fadeIn(1500);
+        },
+        onRendered: function(){
+            $('.descr').hide();
+            $('.carousel-big .descr').toggle();
+        },
+        speed:1,
+        frontItemClass: 'carousel-big'
+    });
 
     const data = [
         {
@@ -100,26 +124,6 @@ $(function(){
         return found;
     };
 
-    crs.Cloud9Carousel({
-        buttonLeft: $(".slider-control-left"),
-        buttonRight: $(".slider-control-right"),
-        yOrigin: 42,
-        yRadius: 40,
-        itemClass: "card",
-        bringToFront: true,
-        onLoaded: function () {
-            crs.css('visibility', 'visible');
-            crs.css('display', 'none');
-            crs.fadeIn(1500);
-        },
-        onRendered: function(){
-            $('.descr').hide();
-            $('.carousel-big .descr').toggle();
-        },
-        speed:1,
-        frontItemClass: 'carousel-big'
-    });
-
     // buttons
     document.querySelector('#print').addEventListener('click', function () {
         print();
@@ -142,7 +146,7 @@ $(function(){
         //kret_diag.hide();
         crs.hide();
     });
-    
+
     document.querySelector("#D3").addEventListener('click', function(){
         crs.toggle();
         //$("#svg_menu").toggle();
