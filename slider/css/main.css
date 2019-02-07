@@ -87,7 +87,7 @@ textarea {
 
 #header h2 {color: whitesmoke}
 #header, #footer {
-    background: #2e3e4e url(../img/background-dots.png) 0 5px repeat;
+    background: #2e3e4e url(../img/background-dots_white.png) 5px 8px repeat;
     opacity: .88;
     height: 60px;
 }
@@ -101,6 +101,16 @@ textarea {
     box-sizing: border-box;
     height: 100%;
     opacity: .88;
+}
+#screen {
+    width: 100%;
+    height: 90%;
+    top: 157px;
+    left: 0;
+    position: fixed;
+    display: block;
+    background-color: ghostwhite;
+    z-index: 1000;
 }
 .breadcrumb {
     font-size:16px;
@@ -143,7 +153,6 @@ textarea {
     height: 300px;
     overflow: visible !important;
 }
-
 .card {
     width: 180px;
     height: 180px;
