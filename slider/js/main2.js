@@ -125,33 +125,33 @@ $(function(){
         print();
     });
 
-    let on = true;
+    let xproc_btn_on = true;
     document.querySelector("#xproc_btn").addEventListener('click', function () {
-        document.querySelector('#info').textContent = '';
-        if(on) {
+        if(xproc_btn_on) {
             this.textContent = 'x%';
             kret_diag.hide();
             xproc.show();
-            on = false;
+            xproc_btn_on = false;
         } else {
             this.textContent = '100%';
             kret_diag.show();
             xproc.hide();
-            on = true;
+            xproc_btn_on = true;
         }
 
         //kret_diag.hide();
         crs.hide();
     });
-
+    
     document.querySelector("#D3").addEventListener('click', function(){
-        document.querySelector('#info').textContent = '';
         crs.toggle();
         //$("#svg_menu").toggle();
-        if(on) {
+        if(xproc_btn_on) {
             kret_diag.toggle();
+        } else if (!xproc_btn_on) {
+            xproc.toggle();
         } else {
-            xproc.hide();
+            crs.toggle();
         }
     });
 
