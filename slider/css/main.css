@@ -196,6 +196,8 @@ textarea {
     background-color: #12aab5 !important;
     border: none;
 }
+.modal-header { border-bottom: 1px solid #f2931e;}
+.modal-footer { border-top: 1px solid #f2931e;}
 input.search {
     margin: 0;
     text-align: center;
