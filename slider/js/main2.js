@@ -216,7 +216,7 @@ $(function(){
         }));
     };
 
-    const searchInput = document.querySelector('#search');
+    const searchInput = document.querySelector('#search_companies');
     const suggestions = document.querySelector('.suggestions');
     searchInput.addEventListener('keyup', displayMatches);
 });
