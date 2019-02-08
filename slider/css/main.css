@@ -180,8 +180,6 @@ textarea {
     font-weight: bolder;
     color: whitesmoke;
 }
-
-
 .carousel-big {
     //border: 10px solid white;
     display: inline-block;
@@ -194,10 +192,10 @@ textarea {
     transition: width .4s cubic-bezier(0.1, 0.8, 0.5, 2), height .4s cubic-bezier(0.1, 0.8, 0.5, 2);
 }
 
-.mdc-button {
+.mdc-button, .btn-primary {
     background-color: #12aab5 !important;
+    border: none;
 }
-
 input.search {
     margin: 0;
     text-align: center;
