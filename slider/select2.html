@@ -22,13 +22,24 @@
             float: right;
             display: table;
             right: 10px;
-            top: 90px;
-            width:500px;
+            top: 70px;
+            z-index: 10;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 25px 0px rgba(0, 0, 0, 0.7);
+            border-radius: 3px;
+            margin: 1em 1.5%;
+            animation: scl 0.5s ease-in-out;
+            transform-origin: left center;
+            background-color: #fff;
+            padding: 10px;
         }
-        #company_info p {line-height: 1}
-        @media (max-width: 1778px) {
+        #company_info:hover {
+            box-shadow: 7px 7px 15px 2px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s ease-in;
+        }
+        #company_info p {line-height: .8}
+        @media (max-width: 1806px) {
             #company_info {
-                width:auto;
                 position: relative;
                 top: unset;
                 float: left;
@@ -38,13 +49,7 @@
                 display: block;
                 overflow-y: hidden;
             }
-            .card_m img {
-                width: 395px;
-            }
-            #company_info p {line-height: .8}
-        }
-        @media (max-width: 1536px) {
-            .card_m img {width: 380px}
+            #sapsan-logo {display: none}
         }
         .cards-row {
             margin: 0px auto;
@@ -57,15 +62,23 @@
             margin: 1em 3.3%;
         }
         .buttom_btns {
-            margin-top: 210px;
+            margin-top: 220px;
         }
 
         .mdl-list__item {
             padding: 0px !important;
-            min-height: 30px !important;
+            min-height: 38px !important;
         }
+        .mdl-tooltip .mdl-list__item {color: white !important;}
+        .mdl-tooltip .mdl-list__item span.mdl-list__item-primary-content {text-align: left;}
         .mdl-list__item > ul.mdl-list > li.mdl-list__item {
             min-height: 15px !important;
+        }
+        .gen_director {cursor: pointer; text-decoration: underline}
+        #sapsan-logo {
+            float: right;
+            margin-top: -181px;
+            margin-right: -42px;
         }
     </style>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -90,22 +103,23 @@
 <section id="main">
     <div class="row cards-row">
         <div class="col-md-10">
-<div id="company_info">
-    <p><strong>Полное наименование:</strong> АКЦИОНЕРНОЕ ОБЩЕСТВО "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР "САПСАН"</p>
-    <p><strong>Краткое наименование:</strong> АО НПЦ "САПСАН"</p>
-    <p><strong>ОГРН:</strong> 1067746240210</p>
-    <p><strong>ИНН:</strong> 7706607880</p>
-    <p><strong>КПП:</strong> 772501001</p>
-    <p><strong>Генеральный директор:</strong> Радаева Елена Алексеевна</p>
-    <p><strong>Адрес:</strong> 115280 г.Москва улица Автозаводская дом 25 корпус 2</p>
-    <p><strong>Телефон / факс:</strong> +7 (495) 287-25-25</p>
-    <p><strong>Электронная почта:</strong> inform@npc-sapsan.ru</p>
-    <p><strong>Тип организации:</strong> НПО</p>
-    <p><strong>Дивизион:</strong> Иное</p>
-    <p><strong>Значимость:</strong> Неключевая</p>
-    <p><strong>Количество работников:</strong> 15</p>
-    <p><strong>Статус организации:</strong> Действующая</p>
-</div>
+            <div id="company_info">
+                <p><strong>Полное наименование:</strong> АКЦИОНЕРНОЕ ОБЩЕСТВО "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР "САПСАН"</p>
+                <p><strong>Краткое наименование:</strong> АО НПЦ "САПСАН"</p>
+                <p><strong>ОГРН:</strong> 1067746240210</p>
+                <p><strong>ИНН:</strong> 7706607880</p>
+                <p><strong>КПП:</strong> 772501001</p>
+                <p><strong>Генеральный директор:</strong>  <span class="gen_director" data-toggle="modal" data-target="#gen_director_Modal">Радаева Елена Алексеевна</span></p>
+                <p><strong>Адрес:</strong> 115280 г.Москва улица Автозаводская дом 25 корпус 2</p>
+                <p><strong>Телефон / факс:</strong> +7 (495) 287-25-25</p>
+                <p><strong>Электронная почта:</strong> inform@npc-sapsan.ru</p>
+                <p><strong>Тип организации:</strong> НПО</p>
+                <p><strong>Дивизион:</strong> Иное</p>
+                <p><strong>Значимость:</strong> Неключевая</p>
+                <p><strong>Количество работников:</strong> 15</p>
+                <p><strong>Статус организации:</strong> Действующая</p>
+                <div id="sapsan-logo"><img src="img/sapsan_logo.png"></div>
+            </div>
         </div>
         <div class="col-md-2 text-center">
         </div>
@@ -512,7 +526,53 @@
     </ul>
 </div>
 <!-- / end tooltips-->
+<div id="gen_director_Modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Генeральный директор</h4>
+            </div>
+            <div class="modal-body">
 
+                <div class="container bs-glyphicons">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="well well-sm">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        <img src="img/user_ava_w.png" alt="" class="img-rounded img-responsive" />
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <h4>Радаева Елена Алексеевна</h4>
+                                        <small>
+                                            <cite title="Россия, Москва">Россия, Москва</cite>
+                                        </small>
+                                        <p>
+                                            <span>📧</span> e.radaeva@npc-sapsan.ru
+                                            <br />
+                                            <span>☎</span> (495) 587-70-70
+                                            <br />
+                                            <span>🌐</span> <a href="https://npc-sapsan.github.io/slider/" target="_blank">www.npc-sapsan.ru</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="foo-button mdc-icon-button material-icons" data-toggle="modal" data-target="#docsModal">description</button>
+                    <button class="foo-button mdc-icon-button material-icons print">printer</button>
+                    <button class="foo-button mdc-icon-button material-icons" data-toggle="modal" data-target="#emailModal">email</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <div id="emailModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
