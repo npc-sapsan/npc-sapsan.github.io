@@ -152,6 +152,26 @@ $(function(){
         //$("#svg_menu").toggle();
         if(xproc_btn_on) {
             kret_diag.toggle();
+            $('#cf_all').click(function(){
+                $('.diag').removeClass('active');
+                $(this).addClass('active');
+                $('#company_filter').attr('src','img/kret_diag_companies.svg');
+            });
+            $('#cf_nii').click(function(){
+                $('.diag').removeClass('active');
+                $(this).addClass('active');
+                $('#company_filter').attr('src','img/kret_diag_nii.svg');
+            });
+            $('#cf_zavod').click(function(){
+                $('.diag').removeClass('active');
+                $(this).addClass('active');
+                $('#company_filter').attr('src','img/kret_diag_zavod.svg');
+            });
+            $('#cf_breo').click(function(){
+                $('.diag').removeClass('active');
+                $(this).addClass('active');
+                $('#company_filter').attr('src','img/kret_diag_breo.svg');
+            });
         } else if (!xproc_btn_on) {
             xproc.toggle();
         } else {
