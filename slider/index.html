@@ -31,6 +31,13 @@
         #main {
             margin: 50px 0 143px 0;
         }
+        .diag {
+            width: 80px;
+            background-color: #12aab5;
+            cursor: pointer
+        }
+        span.active {background-color: #f2931e}
+        .diag:hover {background-color: #10739e}
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -124,7 +131,14 @@
                     </div>
                 </div>
                 <div id="kret_diag">
-                    <img data-src="img/kret_diag_companies.svg" class="lazyload">
+                    <img data-src="img/kret_diag_companies.svg" class="lazyload" id="company_filter">
+                    <div>
+                        <span class="label label-default diag active" id="cf_all">все</span>
+                        <span class="label label-default diag" id="cf_nii">НИИ</span>
+                        <span class="label label-default diag" id="cf_zavod">Завод</span>
+                        <span class="label"> / </span>
+                        <span class="label label-default diag" id="cf_breo"> БРЭО </span>
+                    </div>
                 </div>
                 <div id="xproc">
                     <img data-src="img/x_proc.svg" class="lazyload">
