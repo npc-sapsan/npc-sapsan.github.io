@@ -140,7 +140,7 @@
             }
         }
         .buttom_btns {
-            margin-top: 220px;
+            margin-top: 100px;
         }
         .breadcrumb {
             padding:18px;
@@ -162,6 +162,7 @@
             top: -500px;
             left: -500px;
             padding: 8px;
+            width: 606px;
         }
         .mdl-list__item {
             padding: 0px !important;
@@ -175,11 +176,6 @@
         .sm_td {width: 60px}
         .td_c {padding-top: 18px !important;}
         .gen_director {cursor: pointer; text-decoration: underline}
-        #sapsan-logo {
-            float: right;
-            margin-top: -181px;
-            margin-right: -42px;
-        }
     </style>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -197,29 +193,28 @@
         </ol>
     </div>
     <div id="user-info">
-
     </div>
 </section>
 <section id="main">
     <div class="row cards-row">
         <div class="col-md-10">
-<div id="company_info">
-    <p><strong>Полное наименование:</strong> АКЦИОНЕРНОЕ ОБЩЕСТВО "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР "САПСАН"</p>
-    <p><strong>Краткое наименование:</strong> АО НПЦ "САПСАН"</p>
-    <p><strong>ОГРН:</strong> 1067746240210</p>
-    <p><strong>ИНН:</strong> 7706607880</p>
-    <p><strong>КПП:</strong> 772501001</p>
-    <p><strong>Генеральный директор:</strong>  <span class="gen_director" data-toggle="modal" data-target="#gen_director_Modal">Радаева Елена Алексеевна</span></p>
-    <p><strong>Адрес:</strong> 115280 г.Москва улица Автозаводская дом 25 корпус 2</p>
-    <p><strong>Телефон / факс:</strong> +7 (495) 287-25-25</p>
-    <p><strong>Электронная почта:</strong> inform@npc-sapsan.ru</p>
-    <p><strong>Тип организации:</strong> НПО</p>
-    <p><strong>Дивизион:</strong> Иное</p>
-    <p><strong>Значимость:</strong> Неключевая</p>
-    <p><strong>Количество работников:</strong> 15</p>
-    <p><strong>Статус организации:</strong> Действующая</p>
-    <div id="sapsan-logo"><img src="img/sapsan_logo.png"></div>
-</div>
+            <div id="company_info">
+                <div id="sapsan-logo"><img src="img/sapsan_logo.png"  width="200px"></div>
+                <div id="org_name"><strong>Полное наименование:</strong> АКЦИОНЕРНОЕ ОБЩЕСТВО "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР "САПСАН"</div>
+                <p><strong>Краткое наименование:</strong> АО НПЦ "САПСАН"</p>
+                <p><strong>ОГРН:</strong> 1067746240210</p>
+                <p><strong>ИНН:</strong> 7706607880</p>
+                <p><strong>КПП:</strong> 772501001</p>
+                <p><strong>Генеральный директор:</strong>  <span class="gen_director" data-toggle="modal" data-target="#gen_director_Modal">Радаева Елена Алексеевна</span></p>
+                <p><strong>Адрес:</strong> 115280 г.Москва улица Автозаводская дом 25 корпус 2</p>
+                <p><strong>Телефон / факс:</strong> +7 (495) 287-25-25</p>
+                <p><strong>Электронная почта:</strong> inform@npc-sapsan.ru</p>
+                <p><strong>Тип организации:</strong> НПО</p>
+                <p><strong>Дивизион:</strong> Иное</p>
+                <p><strong>Значимость:</strong> Неключевая</p>
+                <p><strong>Количество работников:</strong> 15</p>
+                <p><strong>Статус организации:</strong> Действующая</p>
+            </div>
         </div>
         <div class="col-md-2 text-center">
         </div>
@@ -252,11 +247,11 @@
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc" id="card3">
-                    <h4>Структура и менеджмент</h4>
+                <div class="card-desc" id="card5">
+                    <h4>Имущественный комплекс</h4>
                 </div>
                 <div class="card-actions">
-                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card3Modal">открыть</button>
+                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card5Modal">открыть</button>
                 </div>
             </div>
 
@@ -270,28 +265,6 @@
             <div class="card">
                 <div class="card-title">
                 </div>
-                <div class="card-desc" id="card4">
-                    <h4>Внутренние документы</h4>
-                </div>
-                <div class="card-actions">
-                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card4Modal">открыть</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">
-                </div>
-                <div class="card-desc" id="card5">
-                    <h4>Имущественный комплекс</h4>
-                </div>
-                <div class="card-actions">
-                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card5Modal">открыть</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">
-                </div>
                 <div class="card-desc" id="card6">
                     <h4>Финансово-хозяйственная деятельность</h4>
                 </div>
@@ -300,6 +273,45 @@
                 </div>
             </div>
 
+            <div class="card">
+                <div class="card-title">
+                </div>
+                <div class="card-desc" id="card3">
+                    <h4>Структура и менеджмент</h4>
+                </div>
+                <div class="card-actions">
+                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card3Modal">открыть</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                </div>
+                <div class="card-desc" id="card4">
+                    <h4>Внутренние документы</h4>
+                </div>
+                <div class="card-actions">
+                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card4Modal">открыть</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2 text-center">
+        </div>
+
+    </div>
+    <div class="row cards-row">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-title">
+                </div>
+                <div class="card-desc" id="card7">
+                    <h4>Договорная деятельность</h4>
+                </div>
+                <div class="card-actions">
+                    <button type='button' class='card-action-readMore' data-toggle="modal" data-target="#card7Modal">открыть</button>
+                </div>
+            </div>
         </div>
         <div class="col-md-2 text-center buttom_btns">
             <p>
@@ -508,6 +520,20 @@
                     </tbody>
                 </table>
 
+                <table class="table table-striped table-hover table-condensed">
+                    <caption>Аккредитация и сертификация</caption>
+                    <tbody>
+                    <tr>
+                        <td class="sm_td"><a href="docs/iso_9001.pdf" target="_blank" class="foo-button mdc-icon-button material-icons" data-toggle="tooltip" data-placement="bottom" title="Сертификат соответствия ГОСТ Р ISO 9001-2011 АО НПЦ САПСАН">description</a></td>
+                        <td class="td_c">Сертификат соответствия ГОСТ Р ISO 9001-2011 АО "НПЦ САПСАН"</td>
+                    </tr>
+                    <tr>
+                        <td class="sm_td"><a href="docs/sro.pdf" target="_blank" class="foo-button mdc-icon-button material-icons" data-toggle="tooltip" data-placement="bottom" title="Выписка из реестра членов саморегулируемой организации">description</a></td>
+                        <td class="td_c">Выписка из реестра членов саморегулируемой организации</td>
+                    </tr>
+                    </tbody>
+                </table>
+
                 <ul class='mdl-list'>
                     <li class="mdl-list__item">
                         <span class="mdl-button mdl-js-button">ЛНПА</span>
@@ -576,6 +602,42 @@
                     <li class="mdl-list__item">
                         <span class="mdl-button mdl-js-button">Заключение Ревизионной комиссии</span>
                     </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div id="card7Modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Договорная деятельность</h4>
+            </div>
+            <div class="modal-body">
+                <ul class='mdl-list'>
+                    <table class="table table-striped table-hover table-condensed">
+                        <caption>Расходные договоры</caption>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-striped table-hover table-condensed">
+                        <caption>Доходные договоры</caption>
+                        <tbody>
+                        <tr>
+                            <td class="sm_td"><a href="docs/dogovor_turex.pdf" target="_blank" class="foo-button mdc-icon-button material-icons" data-toggle="tooltip" data-placement="bottom" title="Договор с ООО ТУРЭКС">description</a></td>
+                            <td class="td_c">Договор с ООО "ТУРЭКС"</td>
+                        </tr>
+                        <tr>
+                            <td class="sm_td"><a href="docs/dogovor_hospital.pdf" target="_blank" class="foo-button mdc-icon-button material-icons" data-toggle="tooltip" data-placement="bottom" title="Договор с ГБУЗ ОКБ">description</a></td>
+                            <td class="td_c">Договор с ГБУЗ "ОКБ"</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </ul>
             </div>
             <div class="modal-footer">
@@ -659,13 +721,15 @@
             <span class="mdl-list__item-primary-content">Свидетельства ОГРН/ИНН</span>
         </li>
         <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">ЛНПА</span>
+            <span class="mdl-list__item-primary-content">Лицензии на осуществление определенных видов деятельности</span>
         </li>
         <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-Лицензии на осуществление определенных видов деятельности
-            </span>
+            <span class="mdl-list__item-primary-content">Аккредитация и сертификация</span>
         </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">ЛНПА</span>
+        </li>
+
     </ul>
 </div>
 <div class="mdl-tooltip" for="card5">
@@ -697,6 +761,16 @@
         </li>
         <li class="mdl-list__item">
             <span class="mdl-list__item-primary-content">Заключение Ревизионной комиссии</span>
+        </li>
+    </ul>
+</div>
+<div class="mdl-tooltip" for="card7">
+    <ul class='mdl-list'>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Расходные договоры</span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">Доходные договоры</span>
         </li>
     </ul>
 </div>
