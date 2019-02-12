@@ -9,10 +9,12 @@ $(function(){
 
     const crs = $("#carousel");
     const kret_diag = $("#kret_diag");
+    const filter_btns = $("#filter_btns");
     const xproc = $("#xproc");
     $('.descr').hide();
     xproc.hide();
     kret_diag.hide();
+    filter_btns.hide();
 
     crs.Cloud9Carousel({
         buttonLeft: $(".slider-control-left"),
@@ -134,11 +136,13 @@ $(function(){
         if(xproc_btn_on) {
             this.textContent = 'x%';
             kret_diag.hide();
+            filter_btns.hide();
             xproc.show();
             xproc_btn_on = false;
         } else {
             this.textContent = '100%';
             kret_diag.show();
+            filter_btns.show();
             xproc.hide();
             xproc_btn_on = true;
         }
@@ -152,23 +156,24 @@ $(function(){
         //$("#svg_menu").toggle();
         if(xproc_btn_on) {
             kret_diag.toggle();
+            filter_btns.toggle();
             $('#cf_all').click(function(){
-                $('.diag').removeClass('active');
+                $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
                 $('#company_filter').attr('src','img/kret_diag_companies.svg');
             });
             $('#cf_nii').click(function(){
-                $('.diag').removeClass('active');
+                $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
                 $('#company_filter').attr('src','img/kret_diag_nii.svg');
             });
             $('#cf_zavod').click(function(){
-                $('.diag').removeClass('active');
+                $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
                 $('#company_filter').attr('src','img/kret_diag_zavod.svg');
             });
             $('#cf_breo').click(function(){
-                $('.diag').removeClass('active');
+                $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
                 $('#company_filter').attr('src','img/kret_diag_breo.svg');
             });
