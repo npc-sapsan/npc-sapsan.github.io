@@ -160,22 +160,22 @@ $(function(){
             $('#cf_all').click(function(){
                 $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
-                $('#company_filter').attr('src','img/kret_diag_companies.svg');
+                $('#company_filter').attr('src','img/diag_all.png');
             });
             $('#cf_nii').click(function(){
                 $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
-                $('#company_filter').attr('src','img/kret_diag_nii.svg');
+                $('#company_filter').attr('src','img/diag_nii.png');
             });
             $('#cf_zavod').click(function(){
                 $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
-                $('#company_filter').attr('src','img/kret_diag_zavod.svg');
+                $('#company_filter').attr('src','img/diag_zavod.png');
             });
             $('#cf_breo').click(function(){
                 $('#filter_btns button').removeClass('active');
                 $(this).addClass('active');
-                $('#company_filter').attr('src','img/kret_diag_breo.svg');
+                $('#company_filter').attr('src','img/diag_breo.png');
             });
         } else if (!xproc_btn_on) {
             xproc.toggle();
